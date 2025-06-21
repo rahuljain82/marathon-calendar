@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Calendar - India</title>
+    <meta name="description" content="Track marathon events across India with our interactive calendar">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Date-fns -->
+    <script src="https://unpkg.com/date-fns@2.30.0/index.js"></script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .calendar-day { transition: all 0.2s ease; }
+        .calendar-day:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold text-gray-800 text-center">
+                🏃‍♂️ Marathon Calendar India
+            </h1>
+            <p class="text-gray-600 text-center mt-2">Track upcoming marathon events across India</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Calendar Section -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <!-- Calendar Header -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 id="current-month-year" class="text-2xl font-semibold text-gray-800"></h2>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button id="prev-month" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button id="next-month" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Grid -->
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-1">
+                        <!-- Calendar will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Section -->
+            <div class="space-y-6">
+                <!-- Selected Date Events -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Selected Date</h3>
+                    <div id="selected-date-events" class="space-y-3">
+                        <!-- Events will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Upcoming Events</h3>
+                    <div id="upcoming-events" class="space-y-3">
+                        <!-- Upcoming events will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2024 Marathon Calendar India. Built with ❤️ for runners.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html> 
